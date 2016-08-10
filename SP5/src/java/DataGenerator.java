@@ -60,15 +60,13 @@ public class DataGenerator {
                 tempPerson.setfName(getRandom(fNameList));
             }
             if (lNamePers == 1) {
-                System.out.println("kommer ind");
                 tempPerson.setlName(getRandom(lNameList));
-                System.out.println(tempPerson.lName);
             }
             if (cityPers == 1) {
                 tempPerson.setCity(getRandom(cityList));
             }
             if (streetPers == 1) {
-                tempPerson.setlName(getRandom(streetList));
+                tempPerson.setStreet(getRandom(streetList));
             }
             System.out.println(tempPerson.fName);
             System.out.println(tempPerson.lName);
