@@ -32,6 +32,18 @@ and open the template in the editor.
                         <button class="btn-primary form-control" ng-click="createData()">Create Data!</button><br>
                     </form>
                 </div>
+                <div class="container" style="text-align: center">
+
+                Data created<br>
+                <div  ng-repeat="value in data">
+                    <p>
+                        First name: {{value.fName}} <br>
+                        Last name: {{value.lName}} <br>
+                        City: {{value.city}}<br>
+                        Street: {{value.street}}<br>
+                    </p>
+                </div>
+            </div>
                 <div class="col-lg-4"></div>
             </div>
         </div>

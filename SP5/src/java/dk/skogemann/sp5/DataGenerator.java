@@ -33,10 +33,11 @@ public class DataGenerator {
             return error;
         }
         for (int i = 0; i < args.length; i++) {
-            if (args[i].equals("fName")) {
+           
+            if (args[i].equals("fname")) {
                 fNamePers = 1;
             }
-            if (args[i].equals("lName")) {
+            if (args[i].equals("lname")) {
                 lNamePers = 1;
             }
             if (args[i].equals("city")) {
@@ -47,12 +48,12 @@ public class DataGenerator {
             }
         }
         
-            /* test
+            
             System.out.println(fNamePers + " fName");
             System.out.println(lNamePers + " lName");
             System.out.println(cityPers + " city");
             System.out.println(streetPers + " street");
-            */
+            
 
         Person[] res = new Person[count];
 
@@ -77,7 +78,7 @@ public class DataGenerator {
             System.out.println(tempPerson.street);
             res[p] = tempPerson;
         }
-
+        System.out.println(res);
         return res;
     }
     

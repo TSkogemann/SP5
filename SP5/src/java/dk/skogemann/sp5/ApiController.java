@@ -5,7 +5,9 @@
  */
 package dk.skogemann.sp5;
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.MimeTypeUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,11 +18,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author Thomas Skogemann
  */
 @Controller
-@RequestMapping(value = "/sp5/")
-public class ApiController {
+@RequestMapping(produces = MimeTypeUtils.APPLICATION_JSON_VALUE)public class ApiController {
     DataGenerator dataGenerator = new DataGenerator();
 
-    @RequestMapping(value = "adresses/{count}/{fname}/{lname}/{city}/{street}", method = RequestMethod.GET)
+    public ApiController() {
+        System.out.println("ApiController constructor");
+    }
+    
+
+    @RequestMapping(value = "adresses/{count}/{fname}/{lname}/{city}/{street}", 
+            method = RequestMethod.GET)
     @ResponseBody
     public Person[] generateData(
         @PathVariable("count") int count,
@@ -29,7 +36,18 @@ public class ApiController {
         @PathVariable("city") String city,
         @PathVariable("street") String street
         ){
-        
-        return dataGenerator.generateData(count, fName, lName, city, street);
+       return dataGenerator.generateData(count, fName, lName, city, street);
+    }
+    
+    @RequestMapping(value = "test")
+    @ResponseBody
+    public void test(){
+        System.out.println("ApiController test bliver kaldt");
+    }
+    
+    @RequestMapping(method = RequestMethod.GET, value = "/ping")
+    @ResponseBody
+    public Person[] ping(HttpServletRequest request) {
+        return new Person[]{};
     }
 }

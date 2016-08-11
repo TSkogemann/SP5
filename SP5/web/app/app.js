@@ -7,7 +7,21 @@
         $scope.city;
         $scope.street;
         $scope.count;
-        $scope.data = [];
+        $scope.data = 
+                
+                $scope.test = function(){
+                    var testUrl="";
+                    testUrl = "test/";
+                    $http({
+                        method: 'GET',
+                        url: testUrl
+                    }).then(function succesCallback(){
+                        console.log("SuccesCallBack test");
+                    }, function errorCallback(){
+                        console.log("ErrorCallBack test");
+                    });
+                };
+                
         $scope.createData = function () {
 
             var url = "";
@@ -22,7 +36,7 @@
                 url = url + 'city/';
             }
             if ($scope.street === 1) {
-                url = url + 'street/';
+                url = url + 'street';
             }
             console.log(url);
             $http({
