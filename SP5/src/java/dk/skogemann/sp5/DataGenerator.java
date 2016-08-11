@@ -72,10 +72,6 @@ public class DataGenerator {
             if (streetPers == 1) {
                 tempPerson.setStreet(getRandom(streetList));
             }
-            System.out.println(tempPerson.fName);
-            System.out.println(tempPerson.lName);
-            System.out.println(tempPerson.city);
-            System.out.println(tempPerson.street);
             res[p] = tempPerson;
         }
         System.out.println(res);
