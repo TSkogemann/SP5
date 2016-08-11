@@ -16,16 +16,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author Thomas Skogemann
  */
 @Controller
-@RequestMapping(value = "/SP5/")
+@RequestMapping(value = "/sp5/")
 public class ApiController {
     DataGenerator dataGenerator = new DataGenerator();
 
-    @RequestMapping(value = "adresses/{count}/{fName}/{lName}/{city}/{street}", method = RequestMethod.GET)
+    @RequestMapping(value = "adresses/{count}/{fname}/{lname}/{city}/{street}", method = RequestMethod.GET)
     @ResponseBody
     public Person[] generateData(
         @PathVariable("count") int count,
-        @PathVariable("fName") String fName,
-        @PathVariable("lName") String lName,
+        @PathVariable("fname") String fName,
+        @PathVariable("lname") String lName,
         @PathVariable("city") String city,
         @PathVariable("street") String street
         ){

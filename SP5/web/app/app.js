@@ -11,18 +11,18 @@
         $scope.createData = function () {
 
             var url = "";
-            url = "adresses/" + $scope.count + "/";
+            url = "adresses/" + $scope.count + '/';
                     if ($scope.fName === 1) {
-                url = url + "fName/";
+                url = url + 'fname/';
             }
             if ($scope.lName === 1) {
-                url = url + "lName/";
+                url = url + 'lname/';
             }
             if ($scope.city === 1) {
-                url = url + "city/";
+                url = url + 'city/';
             }
             if ($scope.street === 1) {
-                url = url + "street/";
+                url = url + 'street/';
             }
             console.log(url);
             $http({
