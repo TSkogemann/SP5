@@ -1,3 +1,8 @@
+package dk.skogemann.sp5;
+
+
+import dk.skogemann.sp5.Person;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
